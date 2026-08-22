@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.time.LocalDate;
 import java.util.List;
@@ -63,5 +64,17 @@ public class StorageTest {
         Storage storage = new Storage(dir);
         storage.deleteDeck("Nope"); // should be a no-op, no exception
         assertFalse(Path.of(dir.toString(), "Nope.txt").toFile().exists());
+    }
+
+    @Test
+    public void loadDeck_skipsMalformedLinesButKeepsValidCards(@TempDir Path dir) throws Exception {
+        Files.writeString(dir.resolve("Broken.txt"),
+                "good|answer|2.5|1|1|2026-08-22\nthis-is-broken\n");
+        Storage storage = new Storage(dir);
+
+        var decks = storage.loadDecks();
+        assertEquals(1, decks.size());
+        assertEquals(1, decks.get(0).size());
+        assertEquals("good", decks.get(0).getCard(0).getFront());
     }
 }

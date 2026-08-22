@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="recall.storage.StorageTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2026-08-22T07:18:30" hostname="Nathans-MacBook-Air-3.local" time="0.013">
+<testsuite name="recall.storage.StorageTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2026-08-22T07:58:24" hostname="Nathans-MacBook-Air-3.local" time="0.008">
   <properties/>
-  <testcase name="deleteDeck_removesFileFromDisk(Path)" classname="recall.storage.StorageTest" time="0.002"/>
+  <testcase name="deleteDeck_removesFileFromDisk(Path)" classname="recall.storage.StorageTest" time="0.001"/>
   <testcase name="saveThenLoad_multipleDecks_allReturned(Path)" classname="recall.storage.StorageTest" time="0.001"/>
   <testcase name="deleteDeck_nonExistentDeck_doesNotThrow(Path)" classname="recall.storage.StorageTest" time="0.001"/>
-  <testcase name="loadDecks_emptyOrMissingDirectory_returnsEmptyList(Path)" classname="recall.storage.StorageTest" time="0.004"/>
-  <testcase name="saveThenLoad_singleDeck_roundTripsCards(Path)" classname="recall.storage.StorageTest" time="0.002"/>
+  <testcase name="loadDecks_emptyOrMissingDirectory_returnsEmptyList(Path)" classname="recall.storage.StorageTest" time="0.001"/>
+  <testcase name="loadDeck_skipsMalformedLinesButKeepsValidCards(Path)" classname="recall.storage.StorageTest" time="0.002"/>
+  <testcase name="saveThenLoad_singleDeck_roundTripsCards(Path)" classname="recall.storage.StorageTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
+  <system-err><![CDATA[Skipping malformed card in /var/folders/zq/3j0k34bx1wvfm81gwsnxvg9w0000gn/T/junit15043219846433475509/Broken.txt: this-is-broken
+]]></system-err>
 </testsuite>

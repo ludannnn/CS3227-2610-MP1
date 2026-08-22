@@ -120,6 +120,36 @@ public class Deck {
         return matches;
     }
 
+    /**
+     * Computes a snapshot of this deck's statistics as of the given day.
+     *
+     * @param today the reference date used to count due cards
+     * @return the deck's statistics
+     */
+    public DeckStats stats(LocalDate today) {
+        Objects.requireNonNull(today, "today");
+        int due = 0;
+        int newCards = 0;
+        int young = 0;
+        int mature = 0;
+        double easeSum = 0.0;
+        for (Flashcard card : cards) {
+            if (card.isDue(today)) {
+                due++;
+            }
+            if (card.getRepetitions() == 0) {
+                newCards++;
+            } else if (card.getInterval() >= DeckStats.MATURE_INTERVAL_DAYS) {
+                mature++;
+            } else {
+                young++;
+            }
+            easeSum += card.getEaseFactor();
+        }
+        double averageEase = cards.isEmpty() ? 0.0 : easeSum / cards.size();
+        return new DeckStats(cards.size(), due, newCards, young, mature, averageEase);
+    }
+
     private static String requireNonBlank(String name) {
         Objects.requireNonNull(name, "name");
         if (name.isBlank()) {

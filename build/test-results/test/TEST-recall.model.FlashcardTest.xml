@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="recall.model.FlashcardTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2026-08-22T07:18:30" hostname="Nathans-MacBook-Air-3.local" time="0.008">
+<testsuite name="recall.model.FlashcardTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2026-08-22T07:58:24" hostname="Nathans-MacBook-Air-3.local" time="0.007">
   <properties/>
-  <testcase name="newCard_hasFreshSm2State()" classname="recall.model.FlashcardTest" time="0.002"/>
-  <testcase name="saveLine_roundTrip_handlesDelimiterAndEscapeCharacters()" classname="recall.model.FlashcardTest" time="0.001"/>
+  <testcase name="newCard_hasFreshSm2State()" classname="recall.model.FlashcardTest" time="0.001"/>
+  <testcase name="saveLine_roundTrip_handlesDelimiterAndEscapeCharacters()" classname="recall.model.FlashcardTest" time="0.002"/>
   <testcase name="constructor_blankFront_throws()" classname="recall.model.FlashcardTest" time="0.0"/>
-  <testcase name="isDue_dueDateInFuture_returnsFalse()" classname="recall.model.FlashcardTest" time="0.001"/>
+  <testcase name="isDue_dueDateInFuture_returnsFalse()" classname="recall.model.FlashcardTest" time="0.0"/>
   <testcase name="isDue_dueDateTodayOrPast_returnsTrue()" classname="recall.model.FlashcardTest" time="0.0"/>
   <testcase name="fromSaveLine_wrongFieldCount_throws()" classname="recall.model.FlashcardTest" time="0.003"/>
   <testcase name="saveLine_roundTrip_preservesAllFields()" classname="recall.model.FlashcardTest" time="0.0"/>

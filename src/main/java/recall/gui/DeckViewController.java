@@ -1,14 +1,21 @@
 package recall.gui;
 
 import java.time.LocalDate;
+import java.util.Optional;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.Dialog;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.GridPane;
 
 import recall.model.Deck;
+import recall.model.DeckStats;
 import recall.model.Flashcard;
 import recall.storage.DeckRepository;
 
@@ -99,6 +106,65 @@ public class DeckViewController {
     @FXML
     private void handleBack() {
         navigator.showMainMenu();
+    }
+
+    @FXML
+    private void handleEdit() {
+        Flashcard selected = cardList.getSelectionModel().getSelectedItem();
+        if (selected == null) {
+            message("Select a card to edit.");
+            return;
+        }
+
+        TextField front = new TextField(selected.getFront());
+        TextField back = new TextField(selected.getBack());
+        GridPane grid = new GridPane();
+        grid.setHgap(8);
+        grid.setVgap(8);
+        grid.add(new Label("Front:"), 0, 0);
+        grid.add(front, 1, 0);
+        grid.add(new Label("Back:"), 0, 1);
+        grid.add(back, 1, 1);
+
+        Dialog<ButtonType> dialog = new Dialog<>();
+        dialog.setTitle("Edit card");
+        dialog.setHeaderText(null);
+        dialog.getDialogPane().setContent(grid);
+        dialog.getDialogPane().getButtonTypes().addAll(ButtonType.OK, ButtonType.CANCEL);
+
+        Optional<ButtonType> choice = dialog.showAndWait();
+        if (choice.isEmpty() || choice.get() != ButtonType.OK) {
+            return;
+        }
+        String newFront = front.getText() == null ? "" : front.getText().trim();
+        String newBack = back.getText() == null ? "" : back.getText().trim();
+        if (newFront.isEmpty() || newBack.isEmpty()) {
+            message("Both the front and back are required; edit cancelled.");
+            return;
+        }
+        selected.setFront(newFront);
+        selected.setBack(newBack);
+        repository.save(deck);
+        refresh();
+        message("Card updated.");
+    }
+
+    @FXML
+    private void handleStats() {
+        DeckStats stats = deck.stats(LocalDate.now());
+        String body = String.format(
+                "Total cards: %d%n"
+                + "Due now: %d%n%n"
+                + "New: %d%n"
+                + "Young: %d%n"
+                + "Mature (interval >= %d days): %d%n%n"
+                + "Average ease: %.2f",
+                stats.total(), stats.due(), stats.newCards(), stats.young(),
+                DeckStats.MATURE_INTERVAL_DAYS, stats.mature(), stats.averageEase());
+        Alert alert = new Alert(AlertType.INFORMATION, body, ButtonType.OK);
+        alert.setTitle("Statistics");
+        alert.setHeaderText(deck.getName());
+        alert.showAndWait();
     }
 
     private static String preview(String text) {

@@ -66,8 +66,14 @@ public class Storage {
         try {
             List<String> lines = Files.readAllLines(file);
             for (String line : lines) {
-                if (!line.isBlank()) {
+                if (line.isBlank()) {
+                    continue;
+                }
+                try {
                     cards.add(Flashcard.fromSaveLine(line));
+                } catch (IllegalArgumentException e) {
+                    // Skip a corrupted line rather than failing the whole deck load.
+                    System.err.println("Skipping malformed card in " + file + ": " + line);
                 }
             }
         } catch (IOException e) {

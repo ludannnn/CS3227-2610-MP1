@@ -27,7 +27,9 @@
 
         <HBox spacing="8.0">
             <children>
+                <Button text="Edit card" onAction="#handleEdit" />
                 <Button text="Delete card" onAction="#handleDelete" />
+                <Button text="Stats" onAction="#handleStats" />
                 <Button text="Review due cards" onAction="#handleReview" />
             </children>
         </HBox>
