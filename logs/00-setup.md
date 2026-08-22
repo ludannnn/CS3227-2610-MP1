@@ -14,8 +14,10 @@ Stand up the repo and a walking skeleton: an empty main-menu window that builds 
 - Added the walking skeleton: `Launcher`, `MainApp`, `MainMenuController`, and `MainMenu.fxml`.
 
 ## Prompts used
-- _Record the AI prompts you used here, what the model produced, and whether the output needed fixing._
-  _(This is what Reflections.md is built from — don't leave it blank.)_
+- prompted the ai to split the project into multiple logical phases to work on
+- prompted the ai for the initial file structure and scaffolding for the project and to begin on phase 0
+- phase 0 included the gradle set up and the main javafx files used to startup an empty window, this was mainly from my 2103 ip and it was 
+just to make sure an app can be run
 
 ## Verified
 - [ ] `./gradlew run` opens a window titled "Recall" with a working "New Deck" button.
