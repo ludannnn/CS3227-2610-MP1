@@ -1,30 +1,29 @@
 package recall.gui;
 
-import java.io.IOException;
+import java.nio.file.Path;
 
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import recall.storage.DeckRepository;
+import recall.storage.Storage;
+
 /**
- * The entry point of the JavaFX application. Loads the main menu screen and
- * shows it in the primary window. Later phases will let controllers swap this
- * scene for the deck view and review screens.
+ * The entry point of the JavaFX application. It wires up the storage and
+ * repository, then hands control to the {@link Navigator}, which shows the main
+ * menu.
  */
 public class MainApp extends Application {
 
+    private static final Path DATA_DIR = Path.of("data", "decks");
+
     @Override
     public void start(Stage stage) {
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource("/view/MainMenu.fxml"));
-            Parent root = fxmlLoader.load();
-            stage.setScene(new Scene(root));
-            stage.setTitle("Recall");
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        DeckRepository repository = new DeckRepository(new Storage(DATA_DIR));
+        Navigator navigator = new Navigator(stage, repository);
+
+        stage.setTitle("Recall");
+        navigator.showMainMenu();
+        stage.show();
     }
 }
