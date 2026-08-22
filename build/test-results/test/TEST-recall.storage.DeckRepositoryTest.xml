@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="recall.storage.DeckRepositoryTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2026-08-22T07:18:30" hostname="Nathans-MacBook-Air-3.local" time="0.026">
+  <properties/>
+  <testcase name="createDeck_invalidName_throws(Path)" classname="recall.storage.DeckRepositoryTest" time="0.007"/>
+  <testcase name="getDeck_isCaseInsensitive(Path)" classname="recall.storage.DeckRepositoryTest" time="0.001"/>
+  <testcase name="isValidName_rejectsUnsafeCharacters()" classname="recall.storage.DeckRepositoryTest" time="0.001"/>
+  <testcase name="createDeck_addsAndPersists(Path)" classname="recall.storage.DeckRepositoryTest" time="0.001"/>
+  <testcase name="deleteDeck_missing_returnsFalse(Path)" classname="recall.storage.DeckRepositoryTest" time="0.0"/>
+  <testcase name="deleteDeck_removesFromMemoryAndDisk(Path)" classname="recall.storage.DeckRepositoryTest" time="0.001"/>
+  <testcase name="createDeck_duplicateIgnoringCase_throws(Path)" classname="recall.storage.DeckRepositoryTest" time="0.012"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
