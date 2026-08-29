@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="recall.model.DeckTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2026-08-22T07:58:24" hostname="Nathans-MacBook-Air-3.local" time="0.003">
+<testsuite name="recall.model.DeckTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2026-08-22T08:16:52" hostname="Nathans-MacBook-Air-3.local" time="0.003">
   <properties/>
   <testcase name="removeCard_removesAndReturnsCard()" classname="recall.model.DeckTest" time="0.0"/>
-  <testcase name="find_matchesFrontOrBackIgnoringCase()" classname="recall.model.DeckTest" time="0.0"/>
-  <testcase name="dueCards_returnsOnlyCardsDueTodayOrEarlier()" classname="recall.model.DeckTest" time="0.001"/>
+  <testcase name="find_matchesFrontOrBackIgnoringCase()" classname="recall.model.DeckTest" time="0.001"/>
+  <testcase name="dueCards_returnsOnlyCardsDueTodayOrEarlier()" classname="recall.model.DeckTest" time="0.0"/>
   <testcase name="getCards_returnsUnmodifiableView()" classname="recall.model.DeckTest" time="0.0"/>
-  <testcase name="addAndSize_reflectCardCount()" classname="recall.model.DeckTest" time="0.0"/>
+  <testcase name="addAndSize_reflectCardCount()" classname="recall.model.DeckTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
