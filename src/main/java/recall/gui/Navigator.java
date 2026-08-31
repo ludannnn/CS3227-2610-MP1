@@ -61,7 +61,9 @@ public class Navigator {
             FXMLLoader loader = new FXMLLoader(Navigator.class.getResource(fxmlPath));
             Parent root = loader.load();
             if (stage.getScene() == null) {
-                stage.setScene(new Scene(root));
+                Scene scene = new Scene(root);
+                scene.getStylesheets().add(Navigator.class.getResource("/view/style.css").toExternalForm());
+                stage.setScene(scene);
             } else {
                 stage.getScene().setRoot(root);
             }

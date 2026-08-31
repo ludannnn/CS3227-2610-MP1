@@ -1,0 +1,83 @@
+.root {
+    -fx-background-color: #FFF8E7;
+}
+
+.button {
+    -fx-padding: 6 16;
+    -fx-background-radius: 4;
+}
+
+.list-view {
+    -fx-background-color: #FFFEF9;
+    -fx-border-color: #D4C9A8;
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+}
+
+.list-view .list-cell {
+    -fx-background-color: #FFFEF9;
+}
+
+.list-view .list-cell.has-due {
+    -fx-background-color: #FDECC8;
+}
+
+.list-view .list-cell:filled:selected {
+    -fx-background-color: #E8D5A3;
+    -fx-text-fill: #3E2723;
+}
+
+.list-view .list-cell:filled:selected:focused {
+    -fx-background-color: #DECA8A;
+    -fx-text-fill: #3E2723;
+}
+
+.blue-button {
+    -fx-background-color: #1E88E5;
+    -fx-text-fill: white;
+    -fx-background-radius: 4;
+}
+
+.blue-button:hover {
+    -fx-background-color: #1565C0;
+}
+
+.green-button {
+    -fx-background-color: #4CAF50;
+    -fx-text-fill: white;
+    -fx-background-radius: 4;
+}
+
+.green-button:hover {
+    -fx-background-color: #43A047;
+}
+
+.red-button {
+    -fx-background-color: #E53935;
+    -fx-text-fill: white;
+    -fx-background-radius: 4;
+}
+
+.red-button:hover {
+    -fx-background-color: #D32F2F;
+}
+
+.orange-button {
+    -fx-background-color: #FF9800;
+    -fx-text-fill: white;
+    -fx-background-radius: 4;
+}
+
+.orange-button:hover {
+    -fx-background-color: #F57C00;
+}
+
+.lime-button {
+    -fx-background-color: #8BC34A;
+    -fx-text-fill: white;
+    -fx-background-radius: 4;
+}
+
+.lime-button:hover {
+    -fx-background-color: #7CB342;
+}

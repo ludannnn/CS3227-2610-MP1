@@ -98,7 +98,7 @@ interval reaches 21 days, and **young** in between.
    - **Hard** : recalled with difficulty.
    - **Good** : recalled correctly.
    - **Easy** : recalled effortlessly.
-4. Recall schedules the card based on the score and shows the next one. When all due cards  are done, it displays "All caught up".
+4. Recall schedules the card based on the score and shows the next one. When all due cards are done, it displays "All caught up".
 
 You can leave a review at any time with **Back to deck**; grades already given
 are saved.

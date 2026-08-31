@@ -16,15 +16,15 @@
         <Insets top="24.0" right="24.0" bottom="24.0" left="24.0" />
     </padding>
     <children>
-        <Label text="Recall" style="-fx-font-size: 28px; -fx-font-weight: bold;" />
+        <Label text="Recall" style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #5D4037;" />
         <Label text="Your decks" style="-fx-font-size: 14px; -fx-text-fill: #666666;" />
 
         <ListView fx:id="deckList" VBox.vgrow="ALWAYS" />
 
         <HBox spacing="8.0">
             <children>
-                <Button text="Open" onAction="#handleOpen" />
-                <Button text="Delete" onAction="#handleDelete" />
+                <Button text="Open" onAction="#handleOpen" styleClass="green-button" />
+                <Button text="Delete" onAction="#handleDelete" styleClass="red-button" />
             </children>
         </HBox>
 
@@ -32,7 +32,7 @@
         <HBox spacing="8.0">
             <children>
                 <TextField fx:id="newDeckField" promptText="Deck name" HBox.hgrow="ALWAYS" />
-                <Button text="Create" onAction="#handleCreate" />
+                <Button text="Create" onAction="#handleCreate" styleClass="green-button" />
             </children>
         </HBox>
 

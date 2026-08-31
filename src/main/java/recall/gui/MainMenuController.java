@@ -41,9 +41,17 @@ public class MainMenuController {
                 super.updateItem(deck, empty);
                 if (empty || deck == null) {
                     setText(null);
+                    getStyleClass().remove("has-due");
                 } else {
                     int due = deck.countDue(LocalDate.now());
                     setText(deck.getName() + "   (" + due + " due / " + deck.size() + " cards)");
+                    if (due > 0) {
+                        if (!getStyleClass().contains("has-due")) {
+                            getStyleClass().add("has-due");
+                        }
+                    } else {
+                        getStyleClass().remove("has-due");
+                    }
                 }
             }
         });

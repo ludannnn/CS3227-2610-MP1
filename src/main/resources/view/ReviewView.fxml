@@ -28,14 +28,14 @@
         <Label fx:id="frontLabel" wrapText="true" style="-fx-font-size: 24px;" />
         <Label fx:id="backLabel" wrapText="true" style="-fx-font-size: 20px; -fx-text-fill: #1a6b1a;" />
 
-        <Button fx:id="showAnswerButton" text="Show Answer" onAction="#handleShowAnswer" />
+        <Button fx:id="showAnswerButton" text="Show Answer" onAction="#handleShowAnswer" styleClass="blue-button" />
 
         <HBox fx:id="ratingBox" spacing="10.0" alignment="CENTER">
             <children>
-                <Button text="Again" onAction="#handleAgain" />
-                <Button text="Hard" onAction="#handleHard" />
-                <Button text="Good" onAction="#handleGood" />
-                <Button text="Easy" onAction="#handleEasy" />
+                <Button text="Again" onAction="#handleAgain" styleClass="red-button" />
+                <Button text="Hard" onAction="#handleHard" styleClass="orange-button" />
+                <Button text="Good" onAction="#handleGood" styleClass="lime-button" />
+                <Button text="Easy" onAction="#handleEasy" styleClass="green-button" />
             </children>
         </HBox>
     </children>

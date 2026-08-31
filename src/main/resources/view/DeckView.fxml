@@ -28,7 +28,7 @@
         <HBox spacing="8.0">
             <children>
                 <Button text="Edit card" onAction="#handleEdit" />
-                <Button text="Delete card" onAction="#handleDelete" />
+                <Button text="Delete card" onAction="#handleDelete" styleClass="red-button" />
                 <Button text="Stats" onAction="#handleStats" />
                 <Button text="Review due cards" onAction="#handleReview" />
             </children>
@@ -39,7 +39,7 @@
             <children>
                 <TextField fx:id="frontField" promptText="Front" HBox.hgrow="ALWAYS" />
                 <TextField fx:id="backField" promptText="Back" HBox.hgrow="ALWAYS" />
-                <Button text="Add" onAction="#handleAdd" />
+                <Button text="Add" onAction="#handleAdd" styleClass="green-button" />
             </children>
         </HBox>
 
